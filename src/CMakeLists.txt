@@ -1,5 +1,5 @@
 set(mk_sources "app_main.c" "mk_build_info.c" "mk_bringup_screen.c")
-set(mk_requires esp_app_format esp_common log heap bsp_guition)
+set(mk_requires esp_app_format esp_common log heap bsp_guition storage telemetry telemetry_sim ui gear derived)
 if(MK_BUILD_TESTS)
     list(APPEND mk_sources "../test/test_build_info.c")
 endif()
