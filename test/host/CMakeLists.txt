@@ -29,3 +29,9 @@ set_target_properties(test_telemetry PROPERTIES C_STANDARD 11 C_STANDARD_REQUIRE
 target_compile_options(test_telemetry PRIVATE -Wall -Wextra -Werror -Wformat=2 -Wshadow)
 add_test(NAME test_telemetry COMMAND test_telemetry)
 
+add_executable(test_gear main_gear.c ../test_gear.c ../../lib/gear/src/mk_gear.c "${mk_unity}/unity.c")
+target_include_directories(test_gear PRIVATE ../../lib/gear/inc "${mk_unity}")
+set_target_properties(test_gear PROPERTIES C_STANDARD 11 C_STANDARD_REQUIRED YES C_EXTENSIONS NO)
+target_compile_options(test_gear PRIVATE -Wall -Wextra -Werror -Wformat=2 -Wshadow)
+target_link_libraries(test_gear PRIVATE m)
+add_test(NAME test_gear COMMAND test_gear)
