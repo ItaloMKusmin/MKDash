@@ -2,3 +2,12 @@
 CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
 # Physical unit is ESP32-P4 v1.3 (esptool, 2026-11-04); rev >= 3.0 images do not run on it.
 CONFIG_ESP32P4_SELECTS_REV_LESS_V3=y
+# Display pipeline settings validated on this board (GUITION demo, SMI-BULK):
+# frame buffer in PSRAM; 128 B L2 lines sustain the DSI DMA (64 B shows noise);
+# -O2 reduces PSRAM contention between XIP code and the display DMA.
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_SPEED_200M=y
+CONFIG_SPIRAM_XIP_FROM_PSRAM=y
+CONFIG_CACHE_L2_CACHE_256KB=y
+CONFIG_CACHE_L2_CACHE_LINE_128B=y
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
