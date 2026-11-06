@@ -1,0 +1,10 @@
+/build*/
+/build*.log
+/sdkconfig
+/sdkconfig.old
+/managed_components/
+__pycache__/
+*.pyc
+
+# Third-party product photo used only as a local hierarchy reference; not redistributed.
+/reference/image.png
