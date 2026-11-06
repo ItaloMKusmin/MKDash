@@ -23,3 +23,9 @@ foreach(mk_state IN ITEMS unknown false true)
     add_test(NAME ${mk_target} COMMAND ${mk_target})
 endforeach()
 
+add_executable(test_telemetry main_telemetry.c ../test_telemetry.c ../../lib/telemetry/src/mk_telemetry.c "${mk_unity}/unity.c")
+target_include_directories(test_telemetry PRIVATE ../../lib/telemetry/inc "${mk_unity}")
+set_target_properties(test_telemetry PROPERTIES C_STANDARD 11 C_STANDARD_REQUIRED YES C_EXTENSIONS NO)
+target_compile_options(test_telemetry PRIVATE -Wall -Wextra -Werror -Wformat=2 -Wshadow)
+add_test(NAME test_telemetry COMMAND test_telemetry)
+
