@@ -1,0 +1,10 @@
+menu "MKAuto aplicacao"
+
+    config MK_APP_BRINGUP_SCREEN
+        bool "Tela tecnica do M0 em vez do dashboard"
+        default n
+        help
+            Barras de cor, alvos de toque nos cantos e memoria livre, para
+            revalidar display e touch da placa.
+
+endmenu
